@@ -9,8 +9,7 @@
 
 namespace Opfura\CoreBundle\Model;
 
-use Doctrine\Common\Collections\ArrayCollection,
-    Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 
