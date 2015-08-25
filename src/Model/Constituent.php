@@ -22,6 +22,13 @@ use Gedmo\Mapping\Annotation as Gedmo;
 class Constituent
 {
     /**
+     * name
+     *
+     * @ORM\Column(type="string", name="name")
+     */
+    protected $name;
+
+    /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime", name="created_at")
      */
@@ -32,6 +39,36 @@ class Constituent
      * @ORM\Column(type="datetime", name="updated_at")
      */
     protected $updatedAt;
+
+    /**
+     * Set name
+     *
+     * @author Tom Haskins-Vaughan <tom@tomhv.uk>
+     * @since  0.5.0
+     *
+     * @param string $name
+     *
+     * @return Student
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @author Tom Haskins-Vaughan <tom@tomhv.uk>
+     * @since  0.5.0
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
     /**
      * Set createdAt
