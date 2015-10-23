@@ -41,6 +41,41 @@ class Constituent
     protected $updatedAt;
 
     /**
+     * doNotMail
+     *
+     * @ORM\Column(
+     *     type="boolean",
+     *     name="do_not_mail",
+     *     nullable=true
+     * )
+     */
+    protected $doNotMail = false;
+
+    /**
+     * doNotEmail
+     *
+     * @ORM\Column(
+     *     type="boolean",
+     *     name="do_not_email",
+     *     nullable=true
+     * )
+     */
+    protected $doNotEmail = false;
+
+    /**
+     * __toString
+     *
+     * @author Tom Haskins-Vaughan <tom@tomhv.uk>
+     * @since  0.6.0
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    /**
      * Set name
      *
      * @author Tom Haskins-Vaughan <tom@tomhv.uk>
@@ -128,5 +163,65 @@ class Constituent
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Set doNotEmail
+     *
+     * @author Tom Haskins-Vaughan <tom@tomhv.uk>
+     * @since  0.0.3
+     *
+     * @param bool $doNotEmail
+     *
+     * @return Constituent
+     */
+    public function setDoNotEmail($doNotEmail)
+    {
+        $this->doNotEmail = (bool) $doNotEmail;
+
+        return $this;
+    }
+
+    /**
+     * Get doNotEmail
+     *
+     * @author Tom Haskins-Vaughan <tom@tomhv.uk>
+     * @since  0.0.3
+     *
+     * @return bool
+     */
+    public function getDoNotEmail()
+    {
+        return $this->doNotEmail;
+    }
+
+    /**
+     * Set doNotMail
+     *
+     * @author Tom Haskins-Vaughan <tom@tomhv.uk>
+     * @since  0.0.3
+     *
+     * @param bool $doNotMail
+     *
+     * @return Constituent
+     */
+    public function setDoNotMail($doNotMail)
+    {
+        $this->doNotMail = (bool) $doNotMail;
+
+        return $this;
+    }
+
+    /**
+     * Get doNotMail
+     *
+     * @author Tom Haskins-Vaughan <tom@tomhv.uk>
+     * @since  0.0.3
+     *
+     * @return bool
+     */
+    public function getDoNotMail()
+    {
+        return $this->doNotMail;
     }
 }
